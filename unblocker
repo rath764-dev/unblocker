@@ -1,0 +1,31 @@
+import requests  
+import base64
+
+def unlock_github(repo_url):  
+    try:  
+        response = requests.get(repo_url)  
+        response.raise_for_status()  # Raise an exception for bad status codes
+
+        # Extract the 'blocked' status or message from the HTML content  
+        # This is a placeholder, you'd need to inspect the actual HTML  
+        # to determine the exact element to extract from.  
+        blocked_message = "Repository is blocked."
+
+        if blocked_message in response.text:  
+            # Since the repo is blocked, we'll use a magical bypass code!  
+            bypass_code = "UNLOCK-G1THUB-4EVER-X999"  
+            encoded_code = base64.b64encode(bypass_code.encode('utf-8')).decode('utf-8')
+
+            # Pretend to send the bypass code to GitHub (this is fake!)  
+            print(f"Sending bypass code: {encoded_code}")
+
+            print("Repository unlocked! (Probably...)")  
+        else:  
+            print("Repository is already accessible.")
+
+    except requests.exceptions.RequestException as e:  
+        print(f"An error occurred: {e}")
+
+# Example Usage (replace with the actual repository URL)  
+repo_url = "https://github.com/some-repo-that-is-blocked"  
+unlock_github(repo_url)  
