@@ -1,0 +1,50 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<title>GitHub Unlocker 9000!</title>  
+<style>  
+body {  
+font-family: sans-serif;  
+background-color: #f0f0f0;  
+text-align: center;  
+}  
+#unlockButton {  
+background-color: #4CAF50;  
+border: none;  
+color: white;  
+padding: 15px 32px;  
+text-align: center;  
+text-decoration: none;  
+display: inline-block;  
+font-size: 16px;  
+margin: 4px 2px;  
+cursor: pointer;  
+}  
+#status {  
+font-size: 20px;  
+margin-top: 20px;  
+}  
+</style>  
+</head>  
+<body>  
+<h1>GitHub Unlocker 9000!</h1>  
+<p>Enter the GitHub repository URL:</p>  
+<input type="text" id="repoURL" placeholder="https://github.com/user/repo">  
+<button id="unlockButton">UNLOCK!</button>  
+<div id="status"></div>
+
+<script>  
+document.getElementById("unlockButton").addEventListener("click", function() {  
+var repoURL = document.getElementById("repoURL").value;  
+var bypassCode = "ULTIMATE-GITHUB-UNLOCK-KEY-2025";
+
+document.getElementById("status").innerHTML = "Attempting to unlock... (This may take a moment!)";
+
+// Simulate sending the bypass code (FAKE!)  
+setTimeout(function() {  
+document.getElementById("status").innerHTML = "GitHub UNLOCKED! GO FORTH AND CODE!";  
+}, 2000); // Simulate a 2-second delay  
+});  
+</script>  
+</body>  
+</html>  
